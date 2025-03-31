@@ -1,18 +1,16 @@
 class VaccineError(Exception):
-    """Базовый класс для ошибок, связанных с вакцинацией."""
-    pass
+    def __str__(self) -> str:
+        return "Visitor is not vaccinated"
 
 
 class NotVaccinatedError(VaccineError):
-    """Исключение для посетителей без вакцины."""
     pass
 
 
 class OutdatedVaccineError(VaccineError):
-    """Исключение для просроченной вакцины."""
     pass
 
 
 class NotWearingMaskError(Exception):
-    """Исключение для посетителей без маски."""
-    pass
+    def __str__(self) -> str:
+        return "Visitor is not wearing a mask"
